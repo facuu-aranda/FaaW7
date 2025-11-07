@@ -1,0 +1,42 @@
+{
+  "name": "faaw7-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "vitest run --browser --coverage > test.result.txt 2>&1"
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "4.1.2",
+    "@open-wc/testing": "^4.0.0",
+    "@open-wc/testing-helpers": "^3.0.1",
+    "@storybook/addon-a11y": "10.0.4",
+    "@storybook/addon-actions": "^9.0.8",
+    "@storybook/addon-docs": "10.0.4",
+    "@storybook/addon-vitest": "10.0.4",
+    "@storybook/web-components": "^10.0.4",
+    "@storybook/web-components-vite": "10.0.4",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/sinon": "^17.0.4",
+    "@vitest/browser-playwright": "^4.0.7",
+    "@vitest/coverage-v8": "^4.0.7",
+    "@web/test-runner-commands": "^0.9.0",
+    "canvas": "^3.2.0",
+    "element-internals-polyfill": "^3.0.2",
+    "jsdom": "^27.1.0",
+    "playwright": "^1.56.1",
+    "sinon": "^21.0.0",
+    "storybook": "10.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^4.0.7"
+  }
+}
