@@ -29,9 +29,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tu-usuario/faaw7-components.git"
+    "url": "https://github.com/facuu-aranda/FaaW7"
   },
-  "homepage": "https://github.com/tu-usuario/faaw7-components",
+  "homepage": "https://github.com/facuu-aranda/FaaW7",
 
   "scripts": {
     "dev": "vite",
