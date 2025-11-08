@@ -14,9 +14,6 @@ Integración Nativa con Formularios: Componentes como faaw7-checkbox, faaw7-text
 
 
 
-
-
-
 Documentación con Storybook: El proyecto está completamente documentado con Storybook, lo que te permite explorar, probar y ver cada componente de forma aislada.
 
 
@@ -27,7 +24,8 @@ Testeado con Vitest: Incluye una configuración de pruebas robusta con Vitest y 
 📋 Componentes Incluidos
 La biblioteca ofrece una amplia gama de componentes que cubren la mayoría de las necesidades de una aplicación de escritorio:
 
-Ventanas y Contenedores
+[-Ventanas y Contenedores-]
+
 faaw7-desktop
 
 faaw7-window
@@ -36,12 +34,9 @@ faaw7-modal
 
 faaw7-title-bar
 
-
 faaw7-fieldset 
 
-
 faaw7-accordion 
-
 
 faaw7-disclosure 
 
@@ -49,10 +44,10 @@ faaw7-tab-group
 
 faaw7-tab
 
-
 faaw7-tab-panel 
 
-Formularios y Botones
+
+[-Formularios y Botones-]
 
 faaw7-button 
 
@@ -89,7 +84,8 @@ faaw7-combobox
 
 faaw7-searchbox 
 
-Menús y Navegación
+
+[-Menús y Navegación-]
 
 faaw7-menu 
 
@@ -102,7 +98,8 @@ faaw7-menu-item
 
 faaw7-context-menu 
 
-Visualización y Datos
+
+[-Visualización y Datos-]
 
 faaw7-listbox 
 
@@ -116,9 +113,10 @@ faaw7-treeview
 faaw7-progress-bar 
 
 
-faaw7-spinner 
+faaw7-spinner  
 
-Notificaciones y Feedback
+
+[-Notificaciones y Feedback-]
 
 faaw7-tooltip 
 
@@ -128,7 +126,8 @@ faaw7-toast
 
 faaw7-toast-container 
 
-Otros
+
+[-Otros-]
 
 faaw7-status-bar 
 
@@ -154,14 +153,7 @@ import 'faaw7-components/src/components/faaw7-window.js';
 import 'faaw7-components/src/components/faaw7-button.js';
 HTML
 
-<faaw7-window title="Mi Aplicación" active>
-  <p>¡Hola, mundo nostálgico!</p>
-  
-  <div slot="footer" style="display: flex; justify-content: flex-end; gap: 6px;">
-    <faaw7-button default>Aceptar</faaw7-button>
-    <faaw7-button>Cancelar</faaw7-button>
-  </div>
-</faaw7-window>
+
 🛠️ Desarrollo Local
 ¿Quieres contribuir o probar los componentes localmente?
 
@@ -195,4 +187,4 @@ pnpm run test
 
 
 📄 Licencia
-Este proyecto está licenciado bajo los términos de la licencia MIT. (Puedes cambiar esto si lo deseas).
+Este proyecto está licenciado bajo los términos de la licencia MIT. 
