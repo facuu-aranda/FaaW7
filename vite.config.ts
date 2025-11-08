@@ -9,7 +9,7 @@ export default defineConfig({
       fileName: (format) => `faaw7-components.${format}.js`
     },
     rollupOptions: {
-      external: ['lit'],
+     external: [/^lit/],
       output: {
         globals: {
           lit: 'lit'
@@ -18,3 +18,4 @@ export default defineConfig({
     }
   }
 });
+
