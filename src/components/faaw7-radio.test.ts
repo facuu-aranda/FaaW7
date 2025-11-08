@@ -21,7 +21,7 @@ describe('faaw7-radio', () => {
     expect(el.checked).to.be.true;
   });
 
-  it('should check radio on label click', async () => {
+  it('should not check itself on label click (waits for parent)', async () => {
     const el = await fixture<Faaw7Radio>(html`<faaw7-radio>Test</faaw7-radio>`);
     const label = el.shadowRoot!.querySelector('label')!;
     
@@ -30,7 +30,7 @@ describe('faaw7-radio', () => {
     label.click();
     await elementUpdated(el);
     
-    expect(el.checked).to.be.true;
+    expect(el.checked).to.be.false;
   });
 
   it('should dispatch faaw7-change event on click', async () => {

@@ -1,28 +1,25 @@
-# 🪟 FaaW7 Components
-
----
+# FaaW7 Components
 
 ## 🇬🇧 English Documentation
 
-A complete **Web Components library** built with **Lit** that recreates the classic **Windows 7 interface** for modern web applications and microfrontends.
+### Overview
+**FaaW7 Components** is a web components library that simulates the visual style and interactive behavior of the Windows 7 operating system. It’s built using **Lit** and designed for **microfrontend architectures**, allowing independent apps to share the same nostalgic UI theme.
 
-Designed to bring nostalgic yet functional UI components to your projects, with full accessibility, Storybook documentation, and test coverage.
+The library provides a complete set of components — buttons, modals, windows, status bars, tooltips, accordions, and more — styled and animated to replicate the look and feel of Windows 7.
 
 ---
 
 ### ✨ Features
-
-- 🧩 **Native Web Components** using [Lit](https://lit.dev/)
-- 🪟 Authentic **Windows 7 visual style**
-- ♿ **Accessible** (ARIA roles, keyboard navigation)
-- ✅ **Unit tested** with [Vitest](https://vitest.dev/)
-- 📘 **Storybook integration** for preview and documentation
-- ⚡ **Vite-ready** for fast development
-- 🧠 Compatible with **microfrontend architectures**
+- 🧩 **Modular design** – import only what you need.
+- 🪟 **Accurate Windows 7 UI simulation**.
+- ⚡ **Built with Lit** – lightweight, reactive, and fast.
+- 🧪 **Full test coverage with Vitest + Storybook integration**.
+- 🎨 **Customizable theming via CSS variables**.
+- 🧱 **Ideal for microfrontends** – each component is encapsulated and framework-agnostic.
 
 ---
 
-### 📦 Installation
+### 🚀 Installation
 
 ```bash
 npm install faaw7-components
@@ -32,77 +29,62 @@ pnpm add faaw7-components
 
 ---
 
-### 🚀 Usage
-
-Import the desired components into your project:
-
-```ts
-import 'faaw7-components';
-```
-
-Or import individual elements:
-
-```ts
-import 'faaw7-components/faaw7-button';
-import 'faaw7-components/faaw7-checkbox';
-```
-
-Then use them directly in your HTML:
+### 🧰 Usage Example
 
 ```html
-<faaw7-button label="Click me!"></faaw7-button>
-<faaw7-checkbox label="Enable feature"></faaw7-checkbox>
+<script type="module">
+  import 'faaw7-components/faaw7-button.js';
+</script>
+
+<faaw7-button default>Click me</faaw7-button>
 ```
+
+You can also integrate it into frameworks like **React**, **Vue**, or **Angular**, using native web components support or wrapper components.
 
 ---
 
-### 🧱 Components
+### 🎨 Theming and Customization
 
-FaaW7 Components includes a full set of Windows 7–style UI elements:
+FaaW7 exposes a variety of **CSS custom properties** for full control of colors, borders, shadows, and fonts. Example:
+
+```css
+:root {
+  --faaw7-color-border: #c3c3c3;
+  --faaw7-color-text: #000;
+  --faaw7-gradient-bg: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+  --faaw7-border-radius: 3px;
+}
+```
+
+You can override these variables globally or locally per component.
+
+---
+
+### 🧩 Components Included
 
 | Category | Components |
 |-----------|-------------|
-| **Inputs** | `faaw7-button`, `faaw7-checkbox`, `faaw7-radio`, `faaw7-textfield`, `faaw7-select`, `faaw7-slider`, `faaw7-spinner` |
-| **Layout** | `faaw7-fieldset`, `faaw7-accordion`, `faaw7-tab-group`, `faaw7-table`, `faaw7-treeview`, `faaw7-desktop`, `faaw7-window` |
-| **Feedback** | `faaw7-progress-bar`, `faaw7-tooltip`, `faaw7-toast`, `faaw7-status-bar` |
-| **Navigation** | `faaw7-menu`, `faaw7-menu-item`, `faaw7-context-menu`, `faaw7-disclosure` |
-| **Media** | `faaw7-audio-player` |
+| Core UI | Button, Checkbox, Textfield, Select, Slider |
+| Containers | Window, Modal, Accordion, Fieldset |
+| Navigation | Menu, Tabs, TreeView |
+| System Elements | StatusBar, Tooltip, Toast, ProgressBar, Spinner |
+| Media | AudioPlayer |
+| Others | ContextMenu, Table, Disclosure, Combobox |
 
 ---
 
-### 🧪 Testing
+### 🧱 Development and Testing
 
-All components are unit tested with **Vitest**.
-
-To run tests locally:
-
-```bash
-pnpm test
-```
-
-Code coverage report can be found in `/coverage/index.html`.
-
----
-
-### 📖 Storybook
-
-To explore all components interactively:
+Run the Storybook for visual testing and documentation:
 
 ```bash
 pnpm storybook
 ```
 
-Storybook provides live demos and documentation for every component.
-
----
-
-### ⚙️ Development
-
-Clone the repository and run locally:
+Run unit tests:
 
 ```bash
-pnpm install
-pnpm dev
+pnpm test
 ```
 
 Build for production:
@@ -113,50 +95,81 @@ pnpm build
 
 ---
 
-### 🧰 Tech Stack
+### 🧑‍💻 For Developers
 
-- **Lit** – for building reusable Web Components  
-- **TypeScript** – for strong typing  
-- **Vite** – for lightning-fast builds  
-- **Vitest** – for testing  
-- **Storybook** – for UI documentation  
+To create a new component:
+
+```bash
+pnpm generate component <component-name>
+```
+
+Each component follows Lit’s `customElement` structure and has:
+- A `.ts` implementation file
+- Optional `.css.ts` for scoped styles
+- `.test.ts` file for Vitest unit testing
+- `.stories.ts` for Storybook
+
+---
+
+### 📦 Microfrontend Integration
+
+Because each component is framework-independent, **FaaW7** is ideal for **microfrontend architectures**. You can import it into any micro app without conflicts.
+
+Example setup:
+
+```js
+import 'faaw7-components/faaw7-window.js';
+import 'faaw7-components/faaw7-status-bar.js';
+```
+
+---
+
+### 🧠 Accessibility
+
+All components are built with **ARIA roles**, keyboard navigation, and accessibility testing (`@storybook/addon-a11y`).
+
+---
+
+### 📚 Documentation
+
+The complete interactive documentation can be explored via **Storybook** or viewed locally after installing the package.
+
+---
+
+### 🏗️ Tech Stack
+- **Lit 3.0**
+- **TypeScript**
+- **Storybook Web Components + Vite**
+- **Vitest + Testing Library**
+- **CSS Variables for Theming**
 
 ---
 
 ### 📄 License
-
-MIT © Facundo Aranda  
-[https://github.com/facuaranda/faaw7-components](https://github.com/facuaranda/faaw7-components)
-
----
-
-### 💙 Inspiration
-
-FaaW7 Components was inspired by the simplicity and visual beauty of the **Windows 7** environment — bringing that aesthetic into the modern web with performance, modularity, and accessibility.
+MIT © FaaW7 Contributors
 
 ---
 
 ## 🇪🇸 Documentación en Español
 
-Una **librería de Web Components** creada con **Lit** que recrea la interfaz clásica de **Windows 7** para aplicaciones web modernas y microfrontends.
+### Descripción General
+**FaaW7 Components** es una librería de componentes web que simula la interfaz visual y el comportamiento interactivo del sistema operativo **Windows 7**. Está desarrollada con **Lit** y pensada para arquitecturas **microfrontend**, permitiendo que aplicaciones independientes compartan la misma estética clásica.
 
-Diseñada para aportar un toque nostálgico pero totalmente funcional, con accesibilidad, documentación en Storybook y cobertura de pruebas.
+Incluye una amplia gama de componentes: botones, modales, ventanas, tooltips, barras de estado, acordeones y más, todos fielmente inspirados en el entorno Windows 7.
 
 ---
 
 ### ✨ Características
-
-- 🧩 **Web Components nativos** con [Lit](https://lit.dev/)
-- 🪟 Estilo visual auténtico de **Windows 7**
-- ♿ **Accesible** (roles ARIA, navegación con teclado)
-- ✅ **Testeada** con [Vitest](https://vitest.dev/)
-- 📘 **Integración con Storybook** para vista previa y documentación
-- ⚡ Compatible con **Vite** para desarrollo rápido
-- 🧠 Ideal para **arquitecturas de microfrontends**
+- 🧩 **Diseño modular**: importa solo los componentes que necesites.
+- 🪟 **Simulación precisa del entorno Windows 7**.
+- ⚡ **Basada en Lit**: ligera, reactiva y rápida.
+- 🧪 **Cobertura de pruebas con Vitest + Storybook**.
+- 🎨 **Temas personalizables mediante variables CSS**.
+- 🧱 **Ideal para microfrontends**: cada componente es independiente.
 
 ---
 
-### 📦 Instalación
+### 🚀 Instalación
 
 ```bash
 npm install faaw7-components
@@ -166,80 +179,65 @@ pnpm add faaw7-components
 
 ---
 
-### 🚀 Uso
-
-Importar todos los componentes:
-
-```ts
-import 'faaw7-components';
-```
-
-O solo los que necesites:
-
-```ts
-import 'faaw7-components/faaw7-button';
-import 'faaw7-components/faaw7-checkbox';
-```
-
-Usarlos directamente en HTML:
+### 🧰 Ejemplo de Uso
 
 ```html
-<faaw7-button label="Haz clic aquí"></faaw7-button>
-<faaw7-checkbox label="Activar función"></faaw7-checkbox>
+<script type="module">
+  import 'faaw7-components/faaw7-button.js';
+</script>
+
+<faaw7-button default>Haz clic</faaw7-button>
 ```
+
+También puedes integrarla en frameworks como **React**, **Vue** o **Angular**.
 
 ---
 
-### 🧱 Componentes
+### 🎨 Personalización y Temas
 
-La librería incluye un conjunto completo de elementos de interfaz estilo Windows 7:
+La librería ofrece variables CSS para modificar colores, sombras, fuentes y bordes:
+
+```css
+:root {
+  --faaw7-color-border: #c3c3c3;
+  --faaw7-color-text: #000;
+  --faaw7-gradient-bg: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+  --faaw7-border-radius: 3px;
+}
+```
+
+Puedes redefinirlas a nivel global o por componente.
+
+---
+
+### 🧩 Componentes Disponibles
 
 | Categoría | Componentes |
 |------------|-------------|
-| **Entradas** | `faaw7-button`, `faaw7-checkbox`, `faaw7-radio`, `faaw7-textfield`, `faaw7-select`, `faaw7-slider`, `faaw7-spinner` |
-| **Estructura** | `faaw7-fieldset`, `faaw7-accordion`, `faaw7-tab-group`, `faaw7-table`, `faaw7-treeview`, `faaw7-desktop`, `faaw7-window` |
-| **Feedback** | `faaw7-progress-bar`, `faaw7-tooltip`, `faaw7-toast`, `faaw7-status-bar` |
-| **Navegación** | `faaw7-menu`, `faaw7-menu-item`, `faaw7-context-menu`, `faaw7-disclosure` |
-| **Multimedia** | `faaw7-audio-player` |
+| Elementos Base | Button, Checkbox, Textfield, Select, Slider |
+| Contenedores | Window, Modal, Accordion, Fieldset |
+| Navegación | Menu, Tabs, TreeView |
+| Sistema | StatusBar, Tooltip, Toast, ProgressBar, Spinner |
+| Multimedia | AudioPlayer |
+| Otros | ContextMenu, Table, Disclosure, Combobox |
 
 ---
 
-### 🧪 Pruebas
+### 🧱 Desarrollo y Pruebas
 
-Todos los componentes están probados con **Vitest**.
-
-Ejecutar pruebas localmente:
-
-```bash
-pnpm test
-```
-
-El reporte de cobertura se encuentra en `/coverage/index.html`.
-
----
-
-### 📖 Storybook
-
-Explora todos los componentes de forma interactiva:
+Ejecutar Storybook:
 
 ```bash
 pnpm storybook
 ```
 
-Storybook incluye ejemplos visuales y documentación de cada componente.
-
----
-
-### ⚙️ Desarrollo
-
-Clonar el repositorio y ejecutar localmente:
+Ejecutar pruebas unitarias:
 
 ```bash
-pnpm install
-pnpm dev
+pnpm test
 ```
 
-Compilar para producción:
+Construir para producción:
 
 ```bash
 pnpm build
@@ -247,23 +245,55 @@ pnpm build
 
 ---
 
-### 🧰 Tecnologías
+### 🧑‍💻 Para Desarrolladores
 
-- **Lit** – para crear componentes reutilizables  
-- **TypeScript** – para tipado fuerte  
-- **Vite** – para compilación rápida  
-- **Vitest** – para testing  
-- **Storybook** – para documentación visual  
+Crear un nuevo componente:
+
+```bash
+pnpm generate component <nombre-del-componente>
+```
+
+Cada componente incluye:
+- Un archivo `.ts` principal
+- Opcional `.css.ts` con estilos
+- Archivo `.test.ts` con pruebas
+- Archivo `.stories.ts` para Storybook
+
+---
+
+### 📦 Integración en Microfrontends
+
+Cada componente es **independiente del framework**, por lo que **FaaW7** es perfecto para integrarse en microfrontends.
+
+Ejemplo:
+
+```js
+import 'faaw7-components/faaw7-window.js';
+import 'faaw7-components/faaw7-status-bar.js';
+```
+
+---
+
+### 🧠 Accesibilidad
+
+Todos los componentes están desarrollados con soporte **ARIA**, navegación por teclado y pruebas de accesibilidad integradas (`@storybook/addon-a11y`).
+
+---
+
+### 📚 Documentación
+
+Puedes explorar la documentación completa de forma interactiva mediante **Storybook** o en tu entorno local tras instalar el paquete.
+
+---
+
+### 🏗️ Tecnologías
+- **Lit 3.0**
+- **TypeScript**
+- **Storybook + Vite**
+- **Vitest + Testing Library**
+- **Variables CSS para temas personalizados**
 
 ---
 
 ### 📄 Licencia
-
-MIT © Facundo Aranda  
-[https://github.com/facuaranda/faaw7-components](https://github.com/facuaranda/faaw7-components)
-
----
-
-### 💙 Inspiración
-
-FaaW7 Components está inspirado en la simplicidad y estética visual de **Windows 7**, trayendo ese estilo a la web moderna con rendimiento, modularidad y accesibilidad.
+MIT © FaaW7 Contributors

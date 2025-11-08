@@ -114,24 +114,32 @@ export class Faaw7Radio extends LitElement {
         .value=${this.value}
         ?checked=${this.checked}
         ?disabled=${this.disabled}
-        @change=${this._handleChange}
+        tabindex="-1" 
+        aria-hidden="true"
       >
-      <label for=${this._id}>
+      <label 
+        for=${this._id}
+        @click=${this._handleClick} 
+      >
         <slot>${this.label}</slot>
       </label>
     `;
   }
+private _handleClick(e: MouseEvent) {
+    if (this.disabled) {
+      e.preventDefault();
+      return;
+    }
+    
+    e.preventDefault(); 
 
-  private _handleChange() {
-    if (this.disabled) return; 
     this.dispatchEvent(new CustomEvent('faaw7-change', {
       detail: { value: this.value },
       bubbles: true,
       composed: true
-    })); 
+    }));
   }
 }
-
 declare global {
   interface HTMLElementTagNameMap {
     'faaw7-radio': Faaw7Radio;

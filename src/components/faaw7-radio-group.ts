@@ -40,10 +40,22 @@ export class Faaw7RadioGroup extends LitElement {
   }
 
   private _handleChange(e: Event) {
+    e.stopPropagation();
+
     const target = e.target as Faaw7Radio;
+
+    if (this.value === target.value) {
+      return;
+    }
+    
     this.value = target.value;
     this.internals.setFormValue(this.value);
-    this._updateRadios();
+    
+    this.dispatchEvent(new CustomEvent('faaw7-change', {
+      detail: { value: this.value }, 
+      bubbles: true, 
+      composed: true
+    }));
   }
   
   private _handleSlotChange() {
@@ -60,7 +72,7 @@ export class Faaw7RadioGroup extends LitElement {
   protected updated(changedProperties: PropertyValues): void {
     if (changedProperties.has('value')) {
       this.internals.setFormValue(this.value);
-      this._updateRadios();
+      this._updateRadios(); 
     }
     if (changedProperties.has('name') && this.name) {
       this.internals.setFormValue(this.value);

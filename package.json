@@ -37,7 +37,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest run --browser --coverage > test.result.txt 2>&1"
+    "test": "vitest run --browser --coverage"
   },
   "dependencies": {
     "lit": "^3.3.1"
