@@ -1,7 +1,7 @@
 {
   "name": "faaw7-components",
   "private": false,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Biblioteca de componentes web que simula la UI de Windows 7, construida con Lit.",
   "author": "@facuu.aranda",
   "license": "MIT",
