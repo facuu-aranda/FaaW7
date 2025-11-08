@@ -111,15 +111,15 @@ export class Faaw7Radio extends LitElement {
         .value=${this.value}
         ?checked=${this.checked}
         ?disabled=${this.disabled}
-        @change=${this._handleChange}
       >
-      <label for=${this._id}>
+      <label for=${this._id} @click=${this._handleChange}>
         <slot></slot>
       </label>
     `;
   }
 
   private _handleChange() {
+    if (this.disabled) return;
     this.checked = true;
     this.dispatchEvent(new CustomEvent('faaw7-change', {
       detail: { value: this.value },

@@ -5,6 +5,7 @@ import { playwright } from '@vitest/browser-playwright'
 export default defineConfig({
   test: {
     globals: true,
+    setupFiles: ['./vitest.setup.ts'],
     browser: {
       enabled: true,
       provider: playwright(), 
@@ -27,6 +28,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+      '/__web-dev-server__web-socket.js': resolve(__dirname, './empty-module.js')
     },
   },
 })

@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 import { waitUntil } from '@open-wc/testing-helpers';
 import './faaw7-table.ts';
 import type { Faaw7Table } from './faaw7-table';

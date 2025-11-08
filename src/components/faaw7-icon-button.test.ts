@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-icon-button.ts';
 import type { Faaw7IconButton } from './faaw7-icon-button';

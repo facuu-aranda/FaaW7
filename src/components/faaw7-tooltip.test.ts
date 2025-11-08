@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-tooltip.ts';
 import type { Faaw7Tooltip } from './faaw7-tooltip';

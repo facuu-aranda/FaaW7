@@ -1,7 +1,7 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
+import { fixture, elementUpdated, expect } from '@open-wc/testing';
 import userEvent from '@testing-library/user-event';
-import { describe, it, expect } from 'vitest';
+import { describe, it } from 'vitest';
 
 import './faaw7-combobox.ts';
 import './faaw7-menu.ts';
@@ -18,11 +18,12 @@ describe('faaw7-combobox (Form Integration)', () => {
     await expect(el).to.be.accessible();
   });
 
+  
   it('should associate with a form and set initial value', async () => {
     const form = await fixture<HTMLFormElement>(html`
       <form>
         <faaw7-combobox name="combo" value="initial"></faaw7-combobox>
-      </form>
+       </form>
     `);
     
     const formData = new FormData(form);
@@ -55,10 +56,10 @@ describe('faaw7-combobox (Form Integration)', () => {
     const form = await fixture<HTMLFormElement>(html`
       <form>
         <faaw7-combobox name="combo">
-          <faaw7-menu>
+           <faaw7-menu>
             <faaw7-menu-item>Opt 1</faaw7-menu-item>
             <faaw7-menu-item>Opt 2</faaw7-menu-item>
-          </faaw7-menu>
+           </faaw7-menu>
         </faaw7-combobox>
       </form>
     `);
@@ -73,6 +74,6 @@ describe('faaw7-combobox (Form Integration)', () => {
     
     const formData = new FormData(form);
     expect(formData.get('combo')).to.equal('Opt 2');
-  });
+   });
 
 });

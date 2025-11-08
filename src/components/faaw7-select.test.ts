@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture, oneEvent, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, oneEvent, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 import { waitUntil } from '@open-wc/testing-helpers';
 
 import './faaw7-select.ts';
@@ -47,7 +47,7 @@ describe('faaw7-select (Form Integration)', () => {
         <faaw7-select>
           <option value="1">Opt 1</option>
           <option value="2">Opt 2</option>
-        </faaw7-select>
+         </faaw7-select>
       </form>
     `);
     const el = wrapper.querySelector('faaw7-select')!;
@@ -60,6 +60,8 @@ describe('faaw7-select (Form Integration)', () => {
     
     const event = await listener as CustomEvent;
     
+    await elementUpdated(el); 
+    
     expect(el.value).to.equal('2'); 
     expect(event.detail.value).to.equal('2');
   });
@@ -67,11 +69,11 @@ describe('faaw7-select (Form Integration)', () => {
   it('should associate with a form and set its value', async () => {
     const form = await fixture<HTMLFormElement>(html`
       <form>
-        <faaw7-select name="test-select" value="b">
+         <faaw7-select name="test-select" value="b">
           <option value="a">A</option>
           <option value="b">B</option>
         </faaw7-select>
-      </form>
+       </form>
     `);
     
     const formData = new FormData(form);
@@ -83,13 +85,13 @@ describe('faaw7-select (Form Integration)', () => {
       <form>
         <faaw7-select name="test-select" value="a">
           <option value="a">A</option>
-          <option value="b">B</option>
+           <option value="b">B</option>
         </faaw7-select>
       </form>
     `);
     
     const el = form.querySelector<Faaw7Select>('faaw7-select')!;
-    await elementUpdated(el);
+    await elementUpdated(el); 
     
     const select = el.shadowRoot!.querySelector('select')!;
 
@@ -97,7 +99,7 @@ describe('faaw7-select (Form Integration)', () => {
     
     select.value = 'b';
     select.dispatchEvent(new Event('change', { bubbles: true }));
-    await elementUpdated(el);
+     await elementUpdated(el);
 
     const formData = new FormData(form);
     expect(formData.get('test-select')).to.equal('b'); 

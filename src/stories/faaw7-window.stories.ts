@@ -85,3 +85,49 @@ export const Completa: Story = {
     left: 200,
   },
 };
+
+export const Themed: Story = {
+  name: 'Personalizado (Themed)',
+  args: {
+    ...Standard.args,
+    title: 'Ventana con Borde Rojo (Themed)',
+    bodyContent: 'Esta ventana usa variables CSS personalizadas para los bordes.',
+    active: true,
+  },
+  render: (args) => html`
+    <style>
+      .themed-window {
+        /* --- Personalización de Bordes --- */
+        /* Borde principal de la ventana y barra de título */
+        --faaw7-w-bd: #8B0000; /* Borde rojo oscuro */
+        
+        /* Borde del cuerpo y pie de página */
+        --faaw7-color-window-border: #8B0000;
+        
+        /* Borde de los controles (minimizar, etc.) */
+        --faaw7-wct-bd: #A93226;
+
+        /* --- Otros colores para que combine --- */
+        --faaw7-w-bg: #444; /* Fondo de la barra de título */
+        --faaw7-w-grad: linear-gradient(to right, #ffffff33, #0000001a, #ffffff11), var(--faaw7-w-bg);
+        
+        --faaw7-color-surface: #333; /* Fondo del cuerpo */
+        --faaw7-color-text: #eee;
+      }
+      .themed-window::part(title-text) {
+          color: #fff;
+          text-shadow: 0 0 2px #000;
+      }
+    </style>
+    <faaw7-window
+      class="themed-window"
+      .title=${args.title}
+      ?active=${args.active}
+      .width=${args.width}
+      .top=${args.top}
+      .left=${args.left}
+    >
+      <p>${args.bodyContent}</p>
+    </faaw7-window>
+  `,
+};

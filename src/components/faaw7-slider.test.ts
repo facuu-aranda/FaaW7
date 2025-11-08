@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-slider.ts';
 import type { Faaw7Slider } from './faaw7-slider';

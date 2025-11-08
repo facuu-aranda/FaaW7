@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-radio-group.ts';
 import './faaw7-radio.ts';

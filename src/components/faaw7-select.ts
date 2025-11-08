@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import type { PropertyValues } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { defaultTheme } from '../theme/default.css.js';
 
@@ -12,33 +12,26 @@ export class Faaw7Select extends LitElement {
   @property({ type: String }) value = '';
   @property({ type: String }) name: string | undefined = undefined;
   @property({ type: Boolean, reflect: true }) disabled = false;
+  @property({ type: String, attribute: 'aria-label' })
+  ariaLabel: string | null = null;
+
+  @query('select') private _select!: HTMLSelectElement;
+
+  @state() private _options: HTMLOptionElement[] = [];
 
   constructor() {
     super();
     this.internals = this.attachInternals();
-    // 1. Soluciona el error de accesibilidad (A11y)
-    this.internals.role = 'listbox';
-  }
-
-  private get _select(): HTMLSelectElement | null {
-    return this.shadowRoot?.querySelector('select') ?? null;
   }
 
   connectedCallback(): void {
     super.connectedCallback();
     this.internals.setFormValue(this.value);
 
-    // 2. Soluciona el crash del polyfill (duplicate attribute)
-    // Pasamos el aria-label al host (manejado por ElementInternals)
-    // en lugar de al <select> interno (manejado por Lit).
     const label = this.getAttribute('aria-label');
-    if (label) {
-      this.internals.ariaLabel = label;
+    if (label && !this.ariaLabel) {
+       this.ariaLabel = label;
     }
-  }
-
-  protected firstUpdated(): void {
-    this._onSlotChange();
   }
 
   protected updated(changedProperties: PropertyValues): void {
@@ -50,20 +43,31 @@ export class Faaw7Select extends LitElement {
     }
   }
 
-  private _onSlotChange() {
-    if (this._select && this._select.value !== this.value) {
-      this._select.value = this.value;
+  private _onSlotChange(e: Event) {
+    const slot = e.target as HTMLSlotElement;
+    this._options = slot.assignedElements({ flatten: true }) as HTMLOptionElement[];
+    this._updateValueAfterSlotChange();
+  }
+
+  private async _updateValueAfterSlotChange() {
+    await this.updateComplete;
+
+    if (this._select) {
+      if (this.value) {
+        this._select.value = this.value;
+      } else {
+        this.value = this._select.value;
+      }
     }
   }
 
   private _handleChange(e: Event) {
     const target = e.target as HTMLSelectElement;
     this.value = target.value;
-    this.internals.setFormValue(this.value);
     this.dispatchEvent(
       new CustomEvent('faaw7-change', {
-        detail: { value: this.value },
-        bubbles: true,
+         detail: { value: this.value },
+         bubbles: true,
         composed: true
       })
     );
@@ -126,12 +130,13 @@ export class Faaw7Select extends LitElement {
       <select
         part="select"
         name=${ifDefined(this.name)}
-        .value=${this.value}
         ?disabled=${this.disabled}
         @change=${this._handleChange}
+        aria-label=${ifDefined(this.ariaLabel)}
       >
-        <slot @slotchange=${this._onSlotChange}></slot>
+        ${this._options.map(opt => opt.cloneNode(true))}
       </select>
+      <slot @slotchange=${this._onSlotChange} style="display: none;"></slot>
     `;
   }
 }

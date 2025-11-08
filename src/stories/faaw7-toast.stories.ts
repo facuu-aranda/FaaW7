@@ -42,7 +42,7 @@ export const Themed: Story = {
     
     return html`
       <style>
-        .themed-toast::part(toast) {
+        .themed-toast faaw7-toast::part(toast) {
           --faaw7-color-surface: #333;
           --faaw7-color-text: #eee;
           --faaw7-color-border: #555;

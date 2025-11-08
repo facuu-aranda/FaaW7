@@ -1,10 +1,11 @@
 import { html } from 'lit';
-import { fixture, oneEvent, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, oneEvent, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 import sinon from 'sinon';
 
 import './faaw7-radio.ts';
 import type { Faaw7Radio } from './faaw7-radio';
+
 describe('faaw7-radio', () => {
 
   it('should render an unchecked radio by default', async () => {

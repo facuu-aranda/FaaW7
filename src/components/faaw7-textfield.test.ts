@@ -1,7 +1,7 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
+import { fixture, expect, elementUpdated } from '@open-wc/testing';
 import userEvent from '@testing-library/user-event';
-import { describe, it, expect } from 'vitest';
+import { describe, it } from 'vitest';
 
 import './faaw7-textfield.ts';
 import type { Faaw7Textfield } from './faaw7-textfield';

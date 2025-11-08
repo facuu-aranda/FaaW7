@@ -61,7 +61,7 @@ export const Themed: Story = {
   },
   render: (args) => html`
     <style>
-      .themed-select {
+      .themed-select::part(select) {
         --faaw7-border-radius: 0px;
         --faaw7-color-border: #000;
         --faaw7-color-border-hover: #000;

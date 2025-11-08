@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-treeview.ts';
 import type { Faaw7TreeView } from './faaw7-treeview';

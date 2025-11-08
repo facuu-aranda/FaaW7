@@ -1,10 +1,11 @@
 import { html } from 'lit';
-import { fixture, oneEvent, elementUpdated } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect, oneEvent, elementUpdated } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 import sinon from 'sinon';
 
 import './faaw7-checkbox.ts';
 import type { Faaw7Checkbox } from './faaw7-checkbox';
+
 describe('faaw7-checkbox (Form Integration)', () => {
 
   it('should render an unchecked checkbox by default', async () => {

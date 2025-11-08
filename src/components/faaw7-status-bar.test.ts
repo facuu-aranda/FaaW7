@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import { fixture } from '@open-wc/testing';
-import { describe, it, expect } from 'vitest';
+import { fixture, expect } from '@open-wc/testing';
+import { describe, it } from 'vitest';
 
 import './faaw7-status-bar.ts';
 import type { Faaw7StatusBar } from './faaw7-status-bar';

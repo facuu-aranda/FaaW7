@@ -64,15 +64,15 @@ export class Faaw7TitleBar extends LitElement {
     }
 
     .faaw7-title-bar {
-      align-items: center;
+      align-items: start;
+      
       background: var(--faaw7-gradient-window-bar, var(--faaw7-w-grad));
-      border: 1px solid var(--faaw7-color-window-border, var(--faaw7-w-bd));
       border-radius: var(--faaw7-border-radius) var(--faaw7-border-radius) 0 0;
-      box-shadow: inset 0 0 0 1px #fff9;
+      box-shadow: inset 0 1px 0 #fffd, inset 1px 0 0 #fffd, inset -1px 0 0 #fffd; 
       display: flex;
       font: var(--faaw7-font-family);
       justify-content: space-between;
-      padding: var(--faaw7-w-space);
+      padding-inline: var(--faaw7-w-space);
       padding-top: 0;
       cursor: move;
     }
@@ -81,7 +81,10 @@ export class Faaw7TitleBar extends LitElement {
       color: #000;
       letter-spacing: 0;
       line-height: 15px;
-      padding-top: var(--faaw7-w-space);
+      padding-block: var(--faaw7-w-space);
+      padding-left: var(--faaw7-w-space);
+      padding-right: calc(var(--faaw7-w-space) + 10px);
+      text-overflow: ellipsis;
       text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
       user-select: none;
       white-space: nowrap;

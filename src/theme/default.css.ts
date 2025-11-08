@@ -4,6 +4,20 @@ export const defaultTheme = css`
   :host, :root {
     --faaw7-font-family: 9pt "Segoe UI", "SegoeUI", "Noto Sans", sans-serif;
     --faaw7-border-radius: 3px;
+
+    --faaw7-w-space: 6px;
+    --faaw7-w-bd: #000000b3;
+    --faaw7-w-bdr: 6px;
+    --faaw7-w-bg: #4580c4;
+    --faaw7-w-glass: linear-gradient(135deg, #fff5 70px, transparent 100px), linear-gradient(225deg, #fff5 70px, transparent 100px), linear-gradient(54deg, #0002 0 4%, #6661 6% 6%, #0002 8% 10%, #0002 15% 16%, #aaa1 17% 18%, #0002 23% 24%, #bbb2 25% 26%, #0002 31% 33%, #0002 34% 34.5%, #bbb2 36% 40%, #0002 41% 41.5%, #bbb2 44% 45%, #bbb2 46% 47%, #0002 48% 49%, #0002 50% 50.5%, #0002 56% 56.5%, #bbb2 57% 63%, #0002 67% 69%, #bbb2 69.5% 70%, #0002 73.5% 74%, #bbb2 74.5% 79%, #0002 80% 84%, #aaa2 85% 86%, #0002 87%, #bbb1 90%) left center/100vw 100vh no-repeat fixed;
+    --faaw7-w-grad: linear-gradient(to right, #ffffff66, #0000001a, #ffffff33), var(--faaw7-w-bg);
+    --faaw7-wct-bd: #0000004d;
+    --faaw7-wct-bdr: 5px;
+    --faaw7-wct-sd: inset 0 0 0 1px #fffa;
+    --faaw7-wct-bg: linear-gradient(#ffffff80, #ffffff4d 45%, #0000001a 50%, #0000001a 75%, #ffffff80);
+    --faaw7-wct-bg-h: radial-gradient(circle at bottom, #2aceda, transparent 65%), linear-gradient(#b6d9ee 50%, #1a6ca1 0);
+    --faaw7-wct-bg-a: radial-gradient(circle at bottom, #0bfdfa, transparent 65%), linear-gradient(#86a7bc 50%, #092747 0);
+    --faaw7-wct_close-bg: radial-gradient(circle at -60% 50%, #0007 5% 10%, #0000 50%), radial-gradient(circle at 160% 50%, #0007 5% 10%, #0000 50%), linear-gradient(#e0a197e5, #cf796a 25% 50%, #d54f36 50%);
     
     --faaw7-color-surface: #f0f0f0;
     --faaw7-color-surface-light: #f6f6f6;
@@ -35,7 +49,7 @@ export const defaultTheme = css`
     --faaw7-gradient-scrollbar: linear-gradient(to right, #e5e5e5, var(--faaw7-color-surface) 20%);
     --faaw7-gradient-scrollbar-h: linear-gradient(to bottom, #e5e5e5, var(--faaw7-color-surface) 20%);
     
-    --faaw7-color-highlight-bg: #2a90ff;
+    --faaw7-color-highlight-bg: #005a9e;
     --faaw7-color-highlight-text: #fff;
     --faaw7-color-highlight-bg-light: linear-gradient(#fff9, #e6ecf5cc 90%, #fffc);
     --faaw7-color-highlight-border: #aaddfa;
