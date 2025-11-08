@@ -1,15 +1,14 @@
 {
   "name": "faaw7-components",
-  "private": false, 
-  "version": "0.1.0", 
+  "private": false,
+  "version": "0.1.0",
   "description": "Biblioteca de componentes web que simula la UI de Windows 7, construida con Lit.",
-  "author": "@facuu.aranda", 
-  "license": "MIT", 
+  "author": "@facuu.aranda",
+  "license": "MIT",
   "type": "module",
-
-  "main": "./dist/faaw7-components.umd.js", 
+  "main": "./dist/faaw7-components.umd.js",
   "module": "./dist/faaw7-components.es.js",
-  "types": "./dist/types/index.d.ts", 
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/faaw7-components.es.js",
@@ -18,7 +17,7 @@
     }
   },
   "files": [
-    "dist" 
+    "dist"
   ],
   "keywords": [
     "lit",
@@ -29,10 +28,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/facuu-aranda/FaaW7"
+    "url": "git+https://github.com/facuu-aranda/FaaW7.git"
   },
   "homepage": "https://github.com/facuu-aranda/FaaW7",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc -p tsconfig.build.json",
