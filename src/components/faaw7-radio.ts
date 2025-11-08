@@ -21,6 +21,9 @@ export class Faaw7Radio extends LitElement {
   @property({ type: String })
   name = '';
 
+  @property({ type: String })
+  label = '';
+
   static styles = [
     defaultTheme,
     css`
@@ -111,21 +114,21 @@ export class Faaw7Radio extends LitElement {
         .value=${this.value}
         ?checked=${this.checked}
         ?disabled=${this.disabled}
+        @change=${this._handleChange}
       >
-      <label for=${this._id} @click=${this._handleChange}>
-        <slot></slot>
+      <label for=${this._id}>
+        <slot>${this.label}</slot>
       </label>
     `;
   }
 
   private _handleChange() {
-    if (this.disabled) return;
-    this.checked = true;
+    if (this.disabled) return; 
     this.dispatchEvent(new CustomEvent('faaw7-change', {
       detail: { value: this.value },
       bubbles: true,
       composed: true
-    }));
+    })); 
   }
 }
 

@@ -26,6 +26,9 @@ export class Faaw7Checkbox extends LitElement {
   @property({ type: String })
   name: string | undefined = undefined;
 
+  @property({ type: String })
+label = '';
+
   constructor() {
     super();
     this.internals = this.attachInternals();
@@ -33,29 +36,28 @@ export class Faaw7Checkbox extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    // --- CORRECCIÓN 1 ---
     this.internals.setFormValue(this.checked ? (this.value ?? 'on') : null);
   }
 
   protected updated(changedProperties: PropertyValues): void {
     if (changedProperties.has('checked') || changedProperties.has('value')) {
-      // --- CORRECCIÓN 2 ---
       this.internals.setFormValue(this.checked ? (this.value ?? 'on') : null);
     }
   }
 
-  private _handleChange() {
+  private _handleChange(e: Event) {
     if (this.disabled) return;
     
-    this.checked = !this.checked;
-    // --- CORRECCIÓN 3 ---
-    this.internals.setFormValue(this.checked ? (this.value ?? 'on') : null);
+    const target = e.target as HTMLInputElement;
+    this.checked = target.checked;
+
+    this.internals.setFormValue(this.checked ? (this.value ?? 'on') : null); 
 
     this.dispatchEvent(new CustomEvent('faaw7-change', {
       detail: { checked: this.checked },
       bubbles: true,
       composed: true
-    }));
+    })); 
   }
 
   static styles = [
@@ -139,9 +141,10 @@ export class Faaw7Checkbox extends LitElement {
         .value=${ifDefined(this.value)}
         ?checked=${this.checked}
         ?disabled=${this.disabled}
+        @change=${this._handleChange}
       >
-      <label for=${this._id} @click=${this._handleChange}>
-        <slot></slot>
+      <label for=${this._id}>
+        <slot>${this.label}</slot>
       </label>
     `;
   }
