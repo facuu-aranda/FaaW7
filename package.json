@@ -1,23 +1,17 @@
 {
   "name": "faaw7-components",
   "private": false,
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Biblioteca de componentes web que simula la UI de Windows 7, construida con Lit.",
   "author": "@facuu.aranda",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/faaw7-components.umd.js",
+  "main": "./dist/faaw7-components.cjs.js",
   "module": "./dist/faaw7-components.es.js",
   "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/faaw7-components.es.js",
-      "require": "./dist/faaw7-components.umd.js",
-      "types": "./dist/types/index.d.ts"
-    }
-  },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "keywords": [
     "lit",
@@ -53,12 +47,14 @@
     "@storybook/web-components": "^10.0.4",
     "@storybook/web-components-vite": "10.0.4",
     "@testing-library/user-event": "^14.6.1",
+    "@types/glob": "^8.1.0",
     "@types/sinon": "^17.0.4",
     "@vitest/browser-playwright": "^4.0.7",
     "@vitest/coverage-v8": "^4.0.7",
     "@web/test-runner-commands": "^0.9.0",
     "canvas": "^3.2.0",
     "element-internals-polyfill": "^3.0.2",
+    "glob": "^10.4.5",
     "jsdom": "^27.1.0",
     "playwright": "^1.56.1",
     "sinon": "^21.0.0",
@@ -66,5 +62,197 @@
     "typescript": "~5.9.3",
     "vite": "^7.1.7",
     "vitest": "^4.0.7"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/faaw7-components.es.js",
+      "require": "./dist/faaw7-components.cjs.js"
+    },
+    "./faaw7-accordion.js": {
+      "types": "./dist/types/components/faaw7-accordion.d.ts",
+      "import": "./dist/components/faaw7-accordion.es.js",
+      "require": "./dist/components/faaw7-accordion.cjs.js"
+    },
+    "./faaw7-audio-player.js": {
+      "types": "./dist/types/components/faaw7-audio-player.d.ts",
+      "import": "./dist/components/faaw7-audio-player.es.js",
+      "require": "./dist/components/faaw7-audio-player.cjs.js"
+    },
+    "./faaw7-button.js": {
+      "types": "./dist/types/components/faaw7-button.d.ts",
+      "import": "./dist/components/faaw7-button.es.js",
+      "require": "./dist/components/faaw7-button.cjs.js"
+    },
+    "./faaw7-checkbox.js": {
+      "types": "./dist/types/components/faaw7-checkbox.d.ts",
+      "import": "./dist/components/faaw7-checkbox.es.js",
+      "require": "./dist/components/faaw7-checkbox.cjs.js"
+    },
+    "./faaw7-combobox.js": {
+      "types": "./dist/types/components/faaw7-combobox.d.ts",
+      "import": "./dist/components/faaw7-combobox.es.js",
+      "require": "./dist/components/faaw7-combobox.cjs.js"
+    },
+    "./faaw7-context-menu.js": {
+      "types": "./dist/types/components/faaw7-context-menu.d.ts",
+      "import": "./dist/components/faaw7-context-menu.es.js",
+      "require": "./dist/components/faaw7-context-menu.cjs.js"
+    },
+    "./faaw7-custom-slider.js": {
+      "types": "./dist/types/components/faaw7-custom-slider.d.ts",
+      "import": "./dist/components/faaw7-custom-slider.es.js",
+      "require": "./dist/components/faaw7-custom-slider.cjs.js"
+    },
+    "./faaw7-desktop.js": {
+      "types": "./dist/types/components/faaw7-desktop.d.ts",
+      "import": "./dist/components/faaw7-desktop.es.js",
+      "require": "./dist/components/faaw7-desktop.cjs.js"
+    },
+    "./faaw7-disclosure.js": {
+      "types": "./dist/types/components/faaw7-disclosure.d.ts",
+      "import": "./dist/components/faaw7-disclosure.es.js",
+      "require": "./dist/components/faaw7-disclosure.cjs.js"
+    },
+    "./faaw7-fieldset.js": {
+      "types": "./dist/types/components/faaw7-fieldset.d.ts",
+      "import": "./dist/components/faaw7-fieldset.es.js",
+      "require": "./dist/components/faaw7-fieldset.cjs.js"
+    },
+    "./faaw7-file-button.js": {
+      "types": "./dist/types/components/faaw7-file-button.d.ts",
+      "import": "./dist/components/faaw7-file-button.es.js",
+      "require": "./dist/components/faaw7-file-button.cjs.js"
+    },
+    "./faaw7-icon-button.js": {
+      "types": "./dist/types/components/faaw7-icon-button.d.ts",
+      "import": "./dist/components/faaw7-icon-button.es.js",
+      "require": "./dist/components/faaw7-icon-button.cjs.js"
+    },
+    "./faaw7-listbox.js": {
+      "types": "./dist/types/components/faaw7-listbox.d.ts",
+      "import": "./dist/components/faaw7-listbox.es.js",
+      "require": "./dist/components/faaw7-listbox.cjs.js"
+    },
+    "./faaw7-menu-bar.js": {
+      "types": "./dist/types/components/faaw7-menu-bar.d.ts",
+      "import": "./dist/components/faaw7-menu-bar.es.js",
+      "require": "./dist/components/faaw7-menu-bar.cjs.js"
+    },
+    "./faaw7-menu-item.js": {
+      "types": "./dist/types/components/faaw7-menu-item.d.ts",
+      "import": "./dist/components/faaw7-menu-item.es.js",
+      "require": "./dist/components/faaw7-menu-item.cjs.js"
+    },
+    "./faaw7-menu.js": {
+      "types": "./dist/types/components/faaw7-menu.d.ts",
+      "import": "./dist/components/faaw7-menu.es.js",
+      "require": "./dist/components/faaw7-menu.cjs.js"
+    },
+    "./faaw7-modal.js": {
+      "types": "./dist/types/components/faaw7-modal.d.ts",
+      "import": "./dist/components/faaw7-modal.es.js",
+      "require": "./dist/components/faaw7-modal.cjs.js"
+    },
+    "./faaw7-progress-bar.js": {
+      "types": "./dist/types/components/faaw7-progress-bar.d.ts",
+      "import": "./dist/components/faaw7-progress-bar.es.js",
+      "require": "./dist/components/faaw7-progress-bar.cjs.js"
+    },
+    "./faaw7-radio-group.js": {
+      "types": "./dist/types/components/faaw7-radio-group.d.ts",
+      "import": "./dist/components/faaw7-radio-group.es.js",
+      "require": "./dist/components/faaw7-radio-group.cjs.js"
+    },
+    "./faaw7-radio.js": {
+      "types": "./dist/types/components/faaw7-radio.d.ts",
+      "import": "./dist/components/faaw7-radio.es.js",
+      "require": "./dist/components/faaw7-radio.cjs.js"
+    },
+    "./faaw7-searchbox.js": {
+      "types": "./dist/types/components/faaw7-searchbox.d.ts",
+      "import": "./dist/components/faaw7-searchbox.es.js",
+      "require": "./dist/components/faaw7-searchbox.cjs.js"
+    },
+    "./faaw7-select.js": {
+      "types": "./dist/types/components/faaw7-select.d.ts",
+      "import": "./dist/components/faaw7-select.es.js",
+      "require": "./dist/components/faaw7-select.cjs.js"
+    },
+    "./faaw7-slider.js": {
+      "types": "./dist/types/components/faaw7-slider.d.ts",
+      "import": "./dist/components/faaw7-slider.es.js",
+      "require": "./dist/components/faaw7-slider.cjs.js"
+    },
+    "./faaw7-spinner.js": {
+      "types": "./dist/types/components/faaw7-spinner.d.ts",
+      "import": "./dist/components/faaw7-spinner.es.js",
+      "require": "./dist/components/faaw7-spinner.cjs.js"
+    },
+    "./faaw7-status-bar-field.js": {
+      "types": "./dist/types/components/faaw7-status-bar-field.d.ts",
+      "import": "./dist/components/faaw7-status-bar-field.es.js",
+      "require": "./dist/components/faaw7-status-bar-field.cjs.js"
+    },
+    "./faaw7-status-bar.js": {
+      "types": "./dist/types/components/faaw7-status-bar.d.ts",
+      "import": "./dist/components/faaw7-status-bar.es.js",
+      "require": "./dist/components/faaw7-status-bar.cjs.js"
+    },
+    "./faaw7-tab-group.js": {
+      "types": "./dist/types/components/faaw7-tab-group.d.ts",
+      "import": "./dist/components/faaw7-tab-group.es.js",
+      "require": "./dist/components/faaw7-tab-group.cjs.js"
+    },
+    "./faaw7-tab-panel.js": {
+      "types": "./dist/types/components/faaw7-tab-panel.d.ts",
+      "import": "./dist/components/faaw7-tab-panel.es.js",
+      "require": "./dist/components/faaw7-tab-panel.cjs.js"
+    },
+    "./faaw7-tab.js": {
+      "types": "./dist/types/components/faaw7-tab.d.ts",
+      "import": "./dist/components/faaw7-tab.es.js",
+      "require": "./dist/components/faaw7-tab.cjs.js"
+    },
+    "./faaw7-table.js": {
+      "types": "./dist/types/components/faaw7-table.d.ts",
+      "import": "./dist/components/faaw7-table.es.js",
+      "require": "./dist/components/faaw7-table.cjs.js"
+    },
+    "./faaw7-textfield.js": {
+      "types": "./dist/types/components/faaw7-textfield.d.ts",
+      "import": "./dist/components/faaw7-textfield.es.js",
+      "require": "./dist/components/faaw7-textfield.cjs.js"
+    },
+    "./faaw7-title-bar.js": {
+      "types": "./dist/types/components/faaw7-title-bar.d.ts",
+      "import": "./dist/components/faaw7-title-bar.es.js",
+      "require": "./dist/components/faaw7-title-bar.cjs.js"
+    },
+    "./faaw7-toast-container.js": {
+      "types": "./dist/types/components/faaw7-toast-container.d.ts",
+      "import": "./dist/components/faaw7-toast-container.es.js",
+      "require": "./dist/components/faaw7-toast-container.cjs.js"
+    },
+    "./faaw7-toast.js": {
+      "types": "./dist/types/components/faaw7-toast.d.ts",
+      "import": "./dist/components/faaw7-toast.es.js",
+      "require": "./dist/components/faaw7-toast.cjs.js"
+    },
+    "./faaw7-tooltip.js": {
+      "types": "./dist/types/components/faaw7-tooltip.d.ts",
+      "import": "./dist/components/faaw7-tooltip.es.js",
+      "require": "./dist/components/faaw7-tooltip.cjs.js"
+    },
+    "./faaw7-treeview.js": {
+      "types": "./dist/types/components/faaw7-treeview.d.ts",
+      "import": "./dist/components/faaw7-treeview.es.js",
+      "require": "./dist/components/faaw7-treeview.cjs.js"
+    },
+    "./faaw7-window.js": {
+      "types": "./dist/types/components/faaw7-window.d.ts",
+      "import": "./dist/components/faaw7-window.es.js",
+      "require": "./dist/components/faaw7-window.cjs.js"
+    }
   }
 }
