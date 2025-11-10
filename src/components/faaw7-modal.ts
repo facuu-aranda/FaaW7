@@ -20,6 +20,9 @@ export class Faaw7Modal extends LitElement {
   @property({ type: String })
   width = '400px';
 
+  @property({ type: String })
+           height = 'auto';
+
   private _handleClose() {
     this.open = false;
     this.dispatchEvent(new CustomEvent('faaw7-close', {
@@ -74,6 +77,7 @@ export class Faaw7Modal extends LitElement {
         class="modal-window"
         .title=${this.title}
         .width=${this.width}
+        .height=${this.height}
         top="0"
         left="0"
         active

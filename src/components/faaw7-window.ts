@@ -16,6 +16,9 @@ export class Faaw7Window extends LitElement {
 
   @property({ type: String })
   width = '500px';
+
+  @property({ type: String })
+  height = 'auto';
   
   @property({ type: Number })
   top = 100;
@@ -113,6 +116,7 @@ export class Faaw7Window extends LitElement {
   render() {
     const styles = {
       width: this.width,
+      height: this.height,
       top: `${this.top}px`,
       left: `${this.left}px`,
     };
